@@ -4,6 +4,7 @@ using System.Collections;
 public class Back : MonoBehaviour {
 private Camera _mainCamera;
 int xpos;
+//FIX!!!!!!!!!!!!!!!!bgSpeed!!!!!!!!!!!!!!
 float vel;
 float width;
 Vector3 bg_size;
@@ -18,11 +19,14 @@ Vector3 bg_size;
     	bottomRight.Scale(new Vector3(1f, -1f, 1f));
     	width=bottomRight.x;
     	bg_size=renderer.bounds.size;
-    	Debug.Log(bottomRight);
+    	//Debug.Log(bottomRight);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Scroll();
+	}
+	void Scroll(){
 		Vector3 pos = transform.position;
 		pos.x=pos.x+vel;
 		//Debug.Log(pos.x);
@@ -35,4 +39,5 @@ Vector3 bg_size;
 		 }
 		transform.position=pos;
 	}
+
 }
